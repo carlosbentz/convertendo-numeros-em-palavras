@@ -1,6 +1,6 @@
 const unidades = ["", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove"]
 const dezenas = ["dez", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"]
-const centenas = ["cem", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"]
+const centenas = ["cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"]
 const otherNumbers = ["dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"]
 const allNumbers = [unidades, dezenas, centenas, otherNumbers]
 
@@ -25,7 +25,11 @@ const numbersToWords = () => {
             break
         }
 
-        if (stringIndex.length > 2) {
+        if (i === 100) {
+            actualNumber += "cem"
+        }
+
+        else if (stringIndex.length > 2) {
 
             actualNumber += " " + allNumbers[2][stringIndex[2] - 1]
 
