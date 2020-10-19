@@ -14,10 +14,16 @@ const showNumbers = (n) => {
 
 const numbersToWords = () => {
     let arrNumbers = []
-    for (let i = 1; i < 1000; i++) {
+    for (let i = 1; i <= 1000; i++) {
         let stringIndex = i.toString()
         stringIndex = stringIndex.split("").reverse().join("")
         let actualNumber = ""
+
+        if (i === 1000) {
+            showNumbers("mil")
+            arrNumbers.push("mil")
+            break
+        }
 
         if (stringIndex.length > 2) {
 
